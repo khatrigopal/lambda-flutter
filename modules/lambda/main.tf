@@ -45,7 +45,7 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
 }
  
 resource "aws_lambda_function" "terraform_lambda_func" {
-   function_name                  =  var.functionname
+   function_name                  =  var.function_name
    role                           =  aws_iam_role.lambda_role.arn
    handler                        =  var.handler
    runtime                        = "python3.8"
