@@ -1,6 +1,6 @@
 variable "filename" {
   description = "The filename of the Python file for the AWS Lambda function."
-  defautl = ""
+  default = ""
 }
 
 variable "function_name" {
