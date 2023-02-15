@@ -58,7 +58,3 @@ handler                        = "${var.filename}"."${var.handler}"
 runtime                        = "python3.8"
 depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Term
