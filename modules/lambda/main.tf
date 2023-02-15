@@ -45,12 +45,11 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
 }
  
 resource "aws_lambda_function" "this" {
+   filename                       = var.filename
    function_name                  =  var.function_name
    role                           =  aws_iam_role.lambda_role.arn
    handler                        =  var.handler
    runtime                        = "python3.8"
-   depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
-   
-   publish       = false
+   depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role
           
 }
