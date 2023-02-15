@@ -5,7 +5,7 @@ data "archive_file" "lambda_function_1" {
 }
 
 module "lambda_function_1" {
-  source         = "./modules/lambda"
+  source         = "../modules/lambda"
   filename       = data.archive_file.lambda_function_1.output_path
   function_name  = "lambda_function_1"
   handler        = "lambda_function_1.handler"
