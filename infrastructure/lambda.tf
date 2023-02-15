@@ -8,6 +8,6 @@ module "lambda_function_1" {
   source         = "../modules/lambda"
   filename       = data.archive_file.lambda_function_1.output_path
   function_name  = "lambda_function_1"
-  handler        = "lambda_function_1.handler"
+  handler        = "lambda_function_1.hello"
 }
 
