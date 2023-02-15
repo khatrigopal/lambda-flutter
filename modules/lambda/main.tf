@@ -44,14 +44,7 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
  policy_arn  = aws_iam_policy.iam_policy_for_lambda.arn
 }
  
-data "archive_file" "zip_the_python_code" {
-type        = "zip"
-source_dir  = var.filename
-output_path = var.filename.zip
-}
- 
 resource "aws_lambda_function" "terraform_lambda_func" {
-   filename                       =  var.filename.zip
    function_name                  =  var.functionname
    role                           =  aws_iam_role.lambda_role.arn
    handler                        =  var.handler
