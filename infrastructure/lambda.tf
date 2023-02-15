@@ -9,6 +9,5 @@ module "lambda_function_1" {
   filename       = data.archive_file.lambda_function_1.output_path
   function_name  = "lambda_function_1"
   handler        = "lambda_function_1.handler"
-  runtime        = "python3.8"
 }
 
