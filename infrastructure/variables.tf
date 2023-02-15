@@ -1,14 +1,12 @@
 variable "filename" {
-  description = "Provide the File Name."
-  default = "welcome.py"
-  }
-
-variable "handler" {
-  description = "Provide the Handler"
-  default = "welcome"
+  description = "The filename of the Python file for the AWS Lambda function."
 }
 
-variable "functionname" {
-  description = "Provide the Handler"
-  default = "testfunction"
+variable "function_name" {
+  description = "The name of the AWS Lambda function."
+}
+
+
+variable "handler" {
+  description = "The name of the Python function that AWS Lambda calls to start execution."
 }
