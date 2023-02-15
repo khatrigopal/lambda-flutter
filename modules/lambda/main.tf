@@ -46,15 +46,15 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
  
 data "archive_file" "zip_the_python_code" {
 type        = "zip"
-source_dir  = "${path.module}/python/${var.filename}"
-output_path = "${path.module}/python/${var.filename}.zip"
+source_dir  = var.filename
+output_path = var.filename.zip
 }
  
 resource "aws_lambda_function" "terraform_lambda_func" {
-filename                       = "${path.module}/python/${var.filename}.zip"
-function_name                  = "${var.functionname}"
-role                           = aws_iam_role.lambda_role.arn
-handler                        = "${var.filename}"."${var.handler}"
-runtime                        = "python3.8"
-depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
+   filename                       =  var.filename.zip
+   function_name                  =  var.functionname
+   role                           =  aws_iam_role.lambda_role.arn
+   handler                        =  var.handler
+   runtime                        = "python3.8"
+   depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 }
