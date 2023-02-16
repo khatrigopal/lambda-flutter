@@ -10,6 +10,7 @@ variable "function_name" {
 
 variable "role_arn" {
   description = "The ARN of the IAM role for the AWS Lambda function."
+  default = ""
 }
 
 variable "handler" {
