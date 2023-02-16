@@ -2,7 +2,7 @@ name: Terraform GitHub Actions
 
 on:
    push:
-    branches: [main]
+    branches: [master]
 jobs:
   Deploy_Resources:
     runs-on: ubuntu-20.04
@@ -45,11 +45,7 @@ jobs:
         continue-on-error: true
         working-directory: ./infrastructure
         
-      - name: Terraform Destroy
-        id: Destroy
-        run: terraform destroy -auto-approve
-        continue-on-error: true
-        working-directory: ./infrastructure
+      
         
       
       
