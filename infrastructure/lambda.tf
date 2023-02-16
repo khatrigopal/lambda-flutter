@@ -22,7 +22,7 @@ module "lambda_function_1" {
   output_path = "${path.module}/lambda_function_2.zip"
 }
 
-module "lambda_function_1" {
+module "lambda_function_2" {
   source         = "../modules/lambda"
   filename       = data.archive_file.lambda_function_2.output_path
   function_name  = "lambda_function_2"
