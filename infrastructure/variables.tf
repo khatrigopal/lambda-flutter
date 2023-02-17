@@ -3,9 +3,14 @@ variable "filename" {
   default = ""
 }
 
-variable "function_name" {
+variable "function_name_1" {
   description = "The name of the AWS Lambda function."
-  default = ""
+  default = "lambda_function_1"
+}
+
+variable "function_name_2" {
+  description = "The name of the AWS Lambda function."
+  default = "lambda_function_2"
 }
 
 variable "role_arn" {
@@ -16,5 +21,5 @@ variable "role_arn" {
 variable "handler" {
   description = "The name of the Python function that AWS Lambda calls to start execution."
   type = string
-  default = "hello"
+  default = "lambda_handler"
 }
