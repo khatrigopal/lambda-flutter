@@ -9,7 +9,7 @@ module "lambda_function_1" {
   filename       = data.archive_file.lambda_function_1.output_path
   role_arn        =  "arn:aws:iam::558940753150:role/lambda-full-acces"
   function_name  = "lambda_function_1"
-  handler        =  "lambda_function_1.lambda_handler"
+  handler        =  "lambda_function_1.hello"
   #source_code_hash = data.archive_file.lambda_function_1.output_base64sha256
   #source_code_hash = filebase64sha256(var.filename)
   
@@ -26,7 +26,7 @@ module "lambda_function_2" {
   filename       = data.archive_file.lambda_function_2.output_path
   role_arn        =  "arn:aws:iam::558940753150:role/lambda-full-acces"
   function_name  = "lambda_function_2"
-  handler        =  "lambda_function_2.lambda_handler"
+  handler        =  "lambda_function_2.hello"
   #source_code_hash = data.archive_file.lambda_function_1.output_base64sha256
   #source_code_hash = filebase64sha256(var.filename)
   
