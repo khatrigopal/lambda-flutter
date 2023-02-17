@@ -11,6 +11,7 @@ module "lambda_function_1" {
   function_name  = "lambda_function_1"
   handler        =  "lambda_function_1.lambda_handler"
   source_code_hash = data.archive_file.lambda_function_1.output_base64sha256
+  publish = true
   #source_code_hash = filebase64sha256(var.filename)
   
 }
