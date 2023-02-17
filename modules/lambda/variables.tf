@@ -11,6 +11,7 @@ variable "role_arn" {
 
 variable "function_name" {
   description = "The name of the AWS Lambda function."
+  default = ""
 }
 
 
