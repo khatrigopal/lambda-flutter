@@ -2,6 +2,7 @@ data "archive_file" "lambda_function_1" {
   type        = "zip"
   source_dir  = "${path.module}/code"
   output_path = "${path.module}/lambda_function_1.zip"
+  source_code_hash = data.archive_file.lambda_function_1.output_base64sha256|
 }
 
 module "lambda_function_1" {
@@ -12,7 +13,7 @@ module "lambda_function_1" {
   handler        =  "lambda_function_1.lambda_handler"
   #source_code_hash = "${data.archive_file.lambda_function_1.output_base64sha256}"
   #source_code_hash = filebase64sha256(var.filename)
-  ignore_source_code_hash = true
+  #ignore_source_code_hash = true
   
 }
 
