@@ -1,3 +1,3 @@
-def lambda_handler (event, context):
+def hello (event, context):
    print ("Welcome to Second Lambda Fumction Pipeline")
   
